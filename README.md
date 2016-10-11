@@ -5,7 +5,7 @@ Version: 2016-06-01
 Installation
 ------------
 
-     composer require serzh/amazon-mws-orders
+     composer require serzh/amazon-mws-products
 
 
 
