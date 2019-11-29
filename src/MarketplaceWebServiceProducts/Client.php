@@ -47,7 +47,7 @@ class MarketplaceWebServiceProducts_Client implements MarketplaceWebServiceProdu
                                'ProxyPort' => -1,
                                'ProxyUsername' => null,
                                'ProxyPassword' => null,
-                               'MaxErrorRetry' => 3,
+                               'MaxErrorRetry' => 15,
                                'Headers' => array()
                                );
 
