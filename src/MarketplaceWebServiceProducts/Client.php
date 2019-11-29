@@ -1048,12 +1048,12 @@ class MarketplaceWebServiceProducts_Client implements MarketplaceWebServiceProdu
             $retries = 0;
             for (;;) {
                 $response = $this->_httpPost($parameters);
-                $status = $response['Status'];
-                if ($status == 200) {
+                $status = (int) $response['Status'];
+                if ($status === 200) {
                     return array('ResponseBody' => $response['ResponseBody'],
                       'ResponseHeaderMetadata' => $response['ResponseHeaderMetadata']);
                 }
-                if ($status == 500 && $this->_pauseOnRetry(++$retries)) {
+                if ($status >= 500 && $status < 600 && $this->_pauseOnRetry(++$retries)) {
                     continue;
                 }
                 throw $this->_reportAnyErrors($response['ResponseBody'],
